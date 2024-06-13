@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-+)m98xkgzz_1uc@b3#3u8^=a!=byf0t8=ql0_@2k0858(n4cn1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.ulvep.in','ulvep.in','0.0.0.0','127.0.0.1']
 
 
 # Application definition
