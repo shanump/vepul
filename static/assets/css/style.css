@@ -1018,14 +1018,14 @@ span.feature-review {margin-left: 10px;}
 }
 .head-left{
     padding-top: 100px ;
+    vertical-align: middle;
 }
 
 .head-right{
-    padding: 160px 50px 50px 20px;
+    padding: 160px 50px 50px 40px;
     position: relative;
     display: flex;
     z-index: 1;
-
 }
 
 .head-right h1{

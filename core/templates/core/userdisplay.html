@@ -18,7 +18,7 @@
         <div class="col-md-6 col-sm-12 head-right" id="can">
            
 
-            <div class="container">
+            <div class="container container-fluid">
                 <h3>Candidate's Profile</h3>
             
                 <div style="margin: 40px 0;">
@@ -30,22 +30,58 @@
                         </div>
                     </form>
                 </div>
+
                 {% if user_profile %}
-                    <p>Name: {{ user_profile.name }}</p>
-                    <p>Registration Number: {{ user_profile.registration_number }}</p>
-                    <p>Father's Name: {{ user_profile.fathername }}</p>
-                    <p>Mother's Name: {{ user_profile.mothername }}</p>
-                    <p>Email: {{ user_profile.email }}</p>
-                    <p>Phone: {{ user_profile.phone }}</p>
-                    <p>WhatsApp Number: {{ user_profile.whtsapp }}</p>
-                    <p>Center: {{ user_profile.center.centername }}</p>
-                    <p>Medium of Examination: {{ user_profile.get_medium_display }}</p>
-                    <p>Registered on: {{ user_profile.created_at }}</p>
-                    <form method="get" action="{% url 'hall_ticket_pdf' user_profile.registration_number %}">
-                        <div style="padding: 20px 0 0px 0; ">
-                            <button type="submit" class="btn btn-primary btn btn-block">Download Hall Ticket</button>
-                        </div>
-                    </form>
+                    <table class="table" >
+                        <tr>
+                            <td>Registration Number</td>
+                            <td>: {{ user_profile.registration_number }}</td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td>: {{ user_profile.name }}</td>
+                        </tr>
+                        <tr>
+                            <td>Father's Name</td>
+                            <td>: {{ user_profile.fathername }}</td>
+                        </tr>
+                        <tr>
+                            <td>Mother's Name:</td>
+                            <td>: {{ user_profile.mothername }}</td>
+                        </tr>
+                        <tr>
+                            <td>E-mail</td>
+                            <td>: {{ user_profile.email }}</td>
+                        </tr>
+                        <tr>
+                            <td>Phone</td>
+                            <td>: {{ user_profile.phone }}</td>
+                        </tr>
+                        <tr>
+                            <td>WhatsApp Number</td>
+                            <td>: {{ user_profile.whtsapp }}</td>
+                        </tr>
+                        <tr>
+                            <td>Center</td>
+                            <td>: {{ user_profile.center.centername }}</td>
+                        </tr>
+                        <tr>
+                            <td>Medium of Examination</td>
+                            <td>: {{ user_profile.get_medium_display }}</td>
+                        </tr>
+                        <tr>
+                            <td>Registered on</td>
+                            <td>: {{ user_profile.created_at }}</td>
+                        </tr>
+                    </table>
+                       
+                    
+                        <form method="get" action="{% url 'hall_ticket_pdf' user_profile.registration_number %}">
+                            <div style="padding: 20px 0 0px 0; ">
+                                <button type="submit" class="btn btn-primary btn btn-block">Download Hall Ticket</button>
+                            </div>
+                        </form>
+                    
                 {% endif %}
             
                 {% if error_message %}
