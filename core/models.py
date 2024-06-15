@@ -13,8 +13,8 @@ class Center(models.Model):
 class UserProfile(models.Model):
     registration_number = models.AutoField(primary_key=True, unique=True)
     name = models.CharField(max_length=100)
-    fathername = models.CharField(max_length=100, null=True, blank=True, default="")
-    mothername = models.CharField(max_length=100, null=True, blank=True, default="")
+    fathername = models.CharField(max_length=100, default="")
+    mothername = models.CharField(max_length=100, default="")
     email = models.EmailField(max_length=100, default="")
     phone = models.CharField(max_length=10, default="")
     center = models.ForeignKey(Center, on_delete=models.CASCADE)
