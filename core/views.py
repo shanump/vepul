@@ -47,6 +47,34 @@ def userdisplay(request):
     centers = Center.objects.all()
     return render(request, 'core/userdisplay.html', {'form': form, 'user_profile': user_profile, 'error_message': error_message, 'centers': centers})
 
+
+
+def render_to_pdf(template_src, context_dict={}):
+    template = get_template(template_src)
+    html = template.render(context_dict)
+    result = BytesIO()
+    pdf = pisa.pisaDocument(BytesIO(html.encode("ISO-8859-1")), result)
+
+    if not pdf.err:
+        return result.getvalue()
+    return None
+
+def hall_ticket_pdf(request, registration_number):
+    
+    user_profile = get_object_or_404(UserProfile, pk=registration_number)
+    pdf = render_to_pdf('core/pdf_template.html', {'user_profile':user_profile})
+
+    if pdf:
+        response = HttpResponse(pdf, content_type='application/pdf')
+        content = "attachment; filename=%s.pdf" % registration_number
+        response['Content-Disposition'] = content
+
+        return render(request, 'core/pdf_template.html', {'user_profile':user_profile})
+
+
+
+#*********************************
+
 def generate_pdf(request, registration_number):
     user_profile = get_object_or_404(UserProfile, registration_number=registration_number)
     
@@ -74,28 +102,3 @@ def generate_pdf(request, registration_number):
     response = HttpResponse(buffer, content_type='application/pdf')
     response['Content-Disposition'] = f'attachment; filename="user_details_{registration_number}.pdf"'
     return response
-
-
-
-def render_to_pdf(template_src, context_dict={}):
-    template = get_template(template_src)
-    html = template.render(context_dict)
-    result = BytesIO()
-    pdf = pisa.pisaDocument(BytesIO(html.encode("ISO-8859-1")), result)
-
-    if not pdf.err:
-        return result.getvalue()
-    return None
-
-def hall_ticket_pdf(request, registration_number):
-    
-    user_profile = get_object_or_404(UserProfile, pk=registration_number)
-    pdf = render_to_pdf('core/pdf_template.html', {'user_profile':user_profile})
-
-    if pdf:
-        response = HttpResponse(pdf, content_type='application/pdf')
-        content = "attachment; filename=%s.pdf" % registration_number
-        response['Content-Disposition'] = content
-
-        return response
-    
