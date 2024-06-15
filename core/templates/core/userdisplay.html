@@ -37,9 +37,10 @@
                     <p>Mother's Name: {{ user_profile.mothername }}</p>
                     <p>Email: {{ user_profile.email }}</p>
                     <p>Phone: {{ user_profile.phone }}</p>
+                    <p>WhatsApp Number: {{ user_profile.whtsapp }}</p>
                     <p>Center: {{ user_profile.center.centername }}</p>
                     <p>Medium of Examination: {{ user_profile.get_medium_display }}</p>
-
+                    <p>Registered on: {{ user_profile.created_at }}</p>
                     <form method="get" action="{% url 'hall_ticket_pdf' user_profile.registration_number %}">
                         <div style="padding: 20px 0 0px 0; ">
                             <button type="submit" class="btn btn-primary btn btn-block">Download Hall Ticket</button>

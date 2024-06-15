@@ -11,7 +11,7 @@ from .models import *
 class RegistrationForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ['name', 'center', 'fathername', 'mothername', 'email', 'phone', 'medium']
+        fields = ['name', 'center', 'fathername', 'mothername', 'email', 'phone','whatsapp','medium']
         
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -26,6 +26,7 @@ class RegistrationForm(forms.ModelForm):
         self.fields['center'].label = "Select Center"
         self.fields['email'].label = "Email ID"
         self.fields['phone'].label = "Contact Number"
+        self.fields['whatsapp'].label = "WhatsApp Number"
         self.fields['medium'].label = "Medium of Examination"
 
         self.fields['name'].widget.attrs['class'] = 'form-control'
@@ -34,6 +35,7 @@ class RegistrationForm(forms.ModelForm):
         self.fields['center'].widget.attrs['class'] = 'form-control'
         self.fields['email'].widget.attrs['class'] = 'form-control'
         self.fields['phone'].widget.attrs['class'] = 'form-control'
+        self.fields['whatsapp'].widget.attrs['class'] = 'form-control'
         self.fields['medium'].widget.attrs['class'] = 'form-control'
 
 class RegistrationNumberForm(forms.Form):

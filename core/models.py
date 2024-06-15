@@ -17,9 +17,11 @@ class UserProfile(models.Model):
     mothername = models.CharField(max_length=100, default="")
     email = models.EmailField(max_length=100, default="")
     phone = models.CharField(max_length=10, default="")
+    whatsapp = models.CharField(max_length=10, default="")
     center = models.ForeignKey(Center, on_delete=models.CASCADE)
     medium = models.CharField(max_length=10, choices=[('EN', 'English'), ('ML', 'Malayalam')], default='EN')
-   
+    created_at = models.DateTimeField(auto_now_add=True)
+
 
     def __str__(self):
         return self.name
