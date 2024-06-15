@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+
+
+
+{% block content %}
+
+
+       
+    <div class="row head-full">
+        <div class="col-md-6 col-sm-12 head-left">
+            <img src="{% static 'assets/images/collection/logo-head.png' %}" alt="brand-image" />
+        </div>
+
+   
+        <div class="col-md-6 col-sm-12 head-right">
+            <div class="container">
+                <h3>Registration Form</h3>
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <div class="form-text">
+                        {{ form.as_p }}
+                    </div>
+                     
+                    <div style="padding: 20px 0 0px 0; ">
+                        <button type="submit" class="btn btn-primary btn btn-block">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+
+{% extends 'core/base.html' %}
+{% load static %}
+
+
+
+
+{% block content %}
+
+
+       
+    <div class="row head-full">
+        <div class="col-md-6 col-sm-12 head-left">
+            <img src="{% static 'assets/images/collection/logo-head.png' %}" alt="brand-image" />
+        </div>
+
+   
+        <div class="col-md-6 col-sm-12 head-right">
+           
+
+            <div class="container">
+                <h3>Candidate's Profile</h3>
+            
+                <div style="margin: 40px 0;">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form }}
+                        <div style="padding: 20px 0 0px 0; ">
+                            <button type="submit" class="btn btn-primary btn btn-block">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                {% if user_profile %}
+                    <p>Name: {{ user_profile.name }}</p>
+                    <p>Registration Number: {{ user_profile.registration_number }}</p>
+                    <p>Father's Name: {{ user_profile.fathername }}</p>
+                    <p>Mother's Name: {{ user_profile.mothername }}</p>
+                    <p>Email: {{ user_profile.email }}</p>
+                    <p>Phone: {{ user_profile.phone }}</p>
+                    <p>Center: {{ user_profile.center.centername }}</p>
+                    <p>Medium: {{ user_profile.get_medium_display }}</p>
+
+                    <form method="get" action="{% url 'hall_ticket_pdf' user_profile.registration_number %}">
+                        <div style="padding: 20px 0 0px 0; ">
+                            <button type="submit" class="btn btn-primary btn btn-block">Download Hall Ticket</button>
+                        </div>
+                    </form>
+                {% endif %}
+            
+                {% if error_message %}
+                    <p>{{ error_message }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+

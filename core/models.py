@@ -1,3 +1,25 @@
+
+
 from django.db import models
 
-# Create your models here.
+class Center(models.Model):
+    id = models.AutoField(primary_key=True)
+    centername = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.centername
+
+
+class UserProfile(models.Model):
+    registration_number = models.AutoField(primary_key=True, unique=True)
+    name = models.CharField(max_length=100)
+    fathername = models.CharField(max_length=100, null=True, blank=True, default="")
+    mothername = models.CharField(max_length=100, null=True, blank=True, default="")
+    email = models.EmailField(max_length=100, null=True, blank=True, default="")
+    phone = models.CharField(max_length=10, null=True, blank=True, default="")
+    center = models.ForeignKey(Center, on_delete=models.CASCADE)
+    medium = models.CharField(max_length=10, choices=[('EN', 'English'), ('ML', 'Malayalam')], default='EN')
+   
+
+    def __str__(self):
+        return self.name

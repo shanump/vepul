@@ -1,0 +1,126 @@
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Hall Ticket</title>
+
+
+        <style type="text/css">
+            body {
+                font-size: 14px;
+            } 
+
+            table {
+                display: inline-table;
+            }
+
+            tr {
+                padding: 5px;
+               text-align: left;
+            }
+
+
+            @page {
+                size: a4 portrait;
+                
+                @frame header_frame {           /* Static Frame */
+                    -pdf-frame-content: header_content;
+                    left: 50pt; width: 512pt; top: 50pt; height: 40pt;
+                }
+                @frame content_frame {          /* Content Frame */
+                    left: 50pt; width: 512pt; top: 50pt; height: 632pt;
+                }
+                @frame footer_frame {           /* Another static Frame */
+                    -pdf-frame-content: footer_content;
+                    left: 50pt; width: 512pt; top: 772pt; height: 20pt;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <div>
+                <center>
+                    <img width="100px" style="display: block; margin: 0 auto;" src="https://drive.google.com/uc?export=view&id=1o-UUX1AXm8WIVns7WmD6P5njFVP1e0Kz" alt="" />
+                </center>
+                <h1><center>ULCCS - Vagbhatananda Edu Project</center></h1>
+                <h3><center>Online Registration - Hall Ticket</center></h3>
+            </div>
+            <hr>
+            <br>
+
+            <div>
+
+                <h2>Candidate Details</h2>
+               
+                    <table width="75%">
+                       
+                        <tr>
+                            <td><strong>Register Number:</strong></td>
+                            <td><strong>: {{ user_profile.registration_number }}</strong>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Name</strong></td>
+                            <td>: {{ user_profile.name }}</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Father's Name</strong></td>
+                            <td>: {{ user_profile.fathername }}</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Mother's Name</strong></td>
+                            <td>: {{ user_profile.mothername }}</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Email</strong></td>
+                            <td>: {{ user_profile.email }}</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Phone</strong></td>
+                            <td>: {{ user_profile.phone }}</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Center</strong></td>
+                            <td>: {{ user_profile.center.centername }}</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Medium</strong></td>
+                            <td>: {{ user_profile.get_medium_display }}</td>
+                        </tr>
+                    </table>
+
+                      
+            </div>
+
+            
+            <br>
+            <hr>
+
+            <p class="text-center">
+                ULCCS Charitable & Welfare Foundation, Madappally College P.O.
+                <br>
+                Vatakara, Kozhikode, Kerala, India
+            
+                <br>
+                 <br>E-mail: ulccsfoundation@gmail.com
+            
+                <br>Phone: 0495 2370670, +91 9446 000131
+            </p>
+        </div>
+
+
+      
+    </body>
+</html>
+

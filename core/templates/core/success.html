@@ -1,0 +1,39 @@
+
+{% extends 'core/base.html' %}
+{% load static %}
+
+
+
+
+{% block content %}
+
+
+       
+    <div class="row head-full">
+        <div class="col-md-6 col-sm-12 head-left">
+            <img src="{% static 'assets/images/collection/logo-head.png' %}" alt="brand-image" />
+        </div>
+
+   
+        <div class="col-md-6 col-sm-12 head-right">
+           
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Registration Successful!</h3>
+                </div>
+                <div class="card-body">
+                  <blockquote class="mb-0">
+                    <p>Your registration number is: <span style="font-size: 22px;">{{ registration_number }}</span></p>
+                    <br>
+                    <footer class="blockquote-footer" style="color: azure;">Please note this registration number for future reference.</footer>
+                  </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
