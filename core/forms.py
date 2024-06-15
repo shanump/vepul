@@ -26,7 +26,7 @@ class RegistrationForm(forms.ModelForm):
         self.fields['center'].label = "Select Center"
         self.fields['email'].label = "Email ID"
         self.fields['phone'].label = "Contact Number"
-        self.fields['medium'].label = "Medium"
+        self.fields['medium'].label = "Medium of Examination"
 
         self.fields['name'].widget.attrs['class'] = 'form-control'
         self.fields['fathername'].widget.attrs['class'] = 'form-control'

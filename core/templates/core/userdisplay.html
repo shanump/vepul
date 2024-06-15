@@ -38,7 +38,7 @@
                     <p>Email: {{ user_profile.email }}</p>
                     <p>Phone: {{ user_profile.phone }}</p>
                     <p>Center: {{ user_profile.center.centername }}</p>
-                    <p>Medium: {{ user_profile.get_medium_display }}</p>
+                    <p>Medium of Examination: {{ user_profile.get_medium_display }}</p>
 
                     <form method="get" action="{% url 'hall_ticket_pdf' user_profile.registration_number %}">
                         <div style="padding: 20px 0 0px 0; ">

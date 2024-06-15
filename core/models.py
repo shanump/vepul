@@ -15,8 +15,8 @@ class UserProfile(models.Model):
     name = models.CharField(max_length=100)
     fathername = models.CharField(max_length=100, null=True, blank=True, default="")
     mothername = models.CharField(max_length=100, null=True, blank=True, default="")
-    email = models.EmailField(max_length=100, null=True, blank=True, default="")
-    phone = models.CharField(max_length=10, null=True, blank=True, default="")
+    email = models.EmailField(max_length=100, default="")
+    phone = models.CharField(max_length=10, default="")
     center = models.ForeignKey(Center, on_delete=models.CASCADE)
     medium = models.CharField(max_length=10, choices=[('EN', 'English'), ('ML', 'Malayalam')], default='EN')
    
