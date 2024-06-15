@@ -69,7 +69,7 @@ def hall_ticket_pdf(request, registration_number):
         content = "attachment; filename=%s.pdf" % registration_number
         response['Content-Disposition'] = content
 
-        return render(request, 'core/pdf_template.html', {'user_profile':user_profile})
+        return response
 
 
 
