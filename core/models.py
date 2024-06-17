@@ -19,7 +19,7 @@ class UserProfile(models.Model):
     phone = models.CharField(max_length=10, default="")
     whatsapp = models.CharField(max_length=10, default="")
     center = models.ForeignKey(Center, on_delete=models.CASCADE)
-    medium = models.CharField(max_length=10, choices=[('EN', 'English'), ('ML', 'Malayalam')], default='EN')
+    medium = models.CharField(max_length=10, choices=[('EN', 'English'), ('ML', 'Malayalam')])
     created_at = models.DateTimeField(auto_now_add=True)
 
 

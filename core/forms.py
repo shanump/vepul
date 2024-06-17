@@ -17,8 +17,10 @@ class RegistrationForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         
         # Add a field for the center selection
-        self.fields['center'] = forms.ModelChoiceField(queryset=Center.objects.all(), empty_label=None)
+        self.fields['center'] = forms.ModelChoiceField(queryset=Center.objects.all(), empty_label="Select")
         
+        #self.fields['center'].initial = None
+
         # Customize field labels
         self.fields['name'].label = "Candidate's Name"
         self.fields['fathername'].label = "Father's Name"
@@ -37,6 +39,8 @@ class RegistrationForm(forms.ModelForm):
         self.fields['phone'].widget.attrs['class'] = 'form-control'
         self.fields['whatsapp'].widget.attrs['class'] = 'form-control'
         self.fields['medium'].widget.attrs['class'] = 'form-control'
+
+
 
 class RegistrationNumberForm(forms.Form):
     registration_number = forms.CharField(label='Enter Registration Number', max_length=100)
