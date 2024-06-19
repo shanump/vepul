@@ -13,6 +13,10 @@ from xhtml2pdf import pisa
 def index(request):
     return render(request, 'core/index.html')
 
+def about(request):
+    return render(request, 'core/about.html')
+
+
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)

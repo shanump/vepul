@@ -49,14 +49,7 @@ body{
 	overflow-x:hidden;
 }
 
-a,a:hover,a:active,a:focus {
-	display:inline-block;
-	text-decoration:none;
-	color: #616060;
-	font-size:16px;
-	padding:0;
-    font-weight: 500;
-}
+
 h1,h2,h3,h4,h5,h6 { 
 	margin: 0;
 	color:#5f5b57;
@@ -1101,6 +1094,30 @@ span.feature-review {margin-left: 10px;}
 
 .mid-para-slog{
     margin: 30px;
+}
+.link-ins{
+    font-weight:600;
+}
+.link-ins a{
+    color: #3FAAEB;
+    padding: 10px;
+    font-weight:900;
+}
+.link-ins a:hover{
+    padding: 10px;
+    color: #144996;   
+}
+
+.pdf-view{
+    margin-top: 150px;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.pdf-view iframe {
+    border: none;
+    width: 100%;
+    position: relative;
 }
 /*========================Thank you=================
 
