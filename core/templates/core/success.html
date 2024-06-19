@@ -30,9 +30,13 @@
                   </blockquote>
                 </div>
 
-                <button class="btn btn-primary btn btn-block" onclick="window.location.href='/userdisplay#can'">
-                    Download Hall Ticket
-                </button>
+                <form method="get" action="{% url 'hall_ticket_pdf' registration_number %}">
+                    <div style="padding: 20px 0 0px 0; ">
+                        <button type="submit" class="btn btn-primary btn-block">Download Hall Ticket</button>
+                    </div>
+                </form>
+
+                
             </div>
         </div>
     </div>
