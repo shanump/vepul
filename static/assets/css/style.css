@@ -114,13 +114,13 @@ nav.navbar.bootsnav {
     color: #616060;
     font-size: 24px;
     font-weight: 500;
-    padding: 10px 0px 10px 0px;
+    padding: 20px 0;
     text-transform:capitalize;
     
 }
 .navbar-header a.navbar-brand span{display: inline-block;color:#144996;text-transform:capitalize;}
 
-.wrap-sticky nav.navbar.bootsnav.sticked .navbar-header a.navbar-brand,.wrap-sticky nav.navbar.bootsnav.sticked .navbar-header a.navbar-brand:hover,.wrap-sticky nav.navbar.bootsnav.sticked .navbar-header a.navbar-brand:focus {padding:10px 0px;}
+.wrap-sticky nav.navbar.bootsnav.sticked .navbar-header a.navbar-brand,.wrap-sticky nav.navbar.bootsnav.sticked .navbar-header a.navbar-brand:hover,.wrap-sticky nav.navbar.bootsnav.sticked .navbar-header a.navbar-brand:focus {padding:20px 0px;}
 /*.navbar-brand*/
 
 /*.nav li*/
@@ -135,7 +135,7 @@ nav.navbar.bootsnav ul.nav > li > a {
     -o-transition: 0.3s linear; 
     transition: 0.3s linear;
 }
-nav.navbar.bootsnav ul.nav > li > a {padding: 48px 25px;}
+nav.navbar.bootsnav ul.nav > li > a {padding: 34px 25px;}
 nav.navbar.bootsnav ul.nav > li > a:hover,nav.navbar.bootsnav ul.nav > li > a:focus{color:#3FAAEB;}
 nav.navbar.bootsnav ul.nav > li.active>a {color:#3FAAEB;}
 
@@ -146,7 +146,7 @@ nav.navbar.bootsnav ul.nav > li.dropdown span {
     font-size: 8px;
     margin-left: 15px;
 }
-.wrap-sticky nav.navbar.bootsnav.sticked ul.nav > li > a{padding:30px 25px;}
+.wrap-sticky nav.navbar.bootsnav.sticked ul.nav > li > a{padding:15px 25px;}
 /*.nav li*/
 
 /*.menu-ui-design*/
