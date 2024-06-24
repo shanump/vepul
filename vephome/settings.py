@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['www.ulvep.in','ulvep.in','0.0.0.0','127.0.0.1']
 
 INSTALLED_APPS = [
     'core',
+    'import_export',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
