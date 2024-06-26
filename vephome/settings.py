@@ -73,7 +73,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'vephome.wsgi.application'
 
-
+from import_export.formats.base_formats import XLSX, CSV
+IMPORT_EXPORT_FORMATS = [XLSX,CSV]
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 

@@ -1,12 +1,8 @@
-# from django import forms
-# from .models import User
 
-# class RegistrationForm(forms.ModelForm):
-#     class Meta:
-#         model = User
-#         fields = ['name']
 from django import forms
 from .models import *
+from import_export.admin import ImportExportModelAdmin, ExportMixin
+
 
 class RegistrationForm(forms.ModelForm):
     class Meta:
@@ -49,3 +45,5 @@ class RegistrationNumberForm(forms.Form):
         super().__init__(*args, **kwargs)
 
         self.fields['registration_number'].widget.attrs['class'] = 'form-control'
+
+
